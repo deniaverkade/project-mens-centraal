@@ -4,12 +4,14 @@ import Footer from "./Footer";
 
 const Layout = () => {
     return (
-        <section>
-            <Navbar />
-            <div>
-                <Outlet />
+        <section class="bg-[#4CBCAD] w-full h-screen">
+            <div class="bg-white w-300 h-full ml-85">
+                <Navbar />
+                <div class="h-[81%]">
+                    <Outlet />
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </section>
     );
 }

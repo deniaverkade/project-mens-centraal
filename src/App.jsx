@@ -4,7 +4,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import NoPage from './pages/NoPage';
-import Layout from "./components"
+import Layout from "./components/Layout"
 
 
 const App = () => {
