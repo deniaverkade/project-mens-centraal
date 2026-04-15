@@ -4,15 +4,15 @@ import Footer from "./Footer";
 
 const Layout = () => {
     return (
-        <section class="bg-[#4CBCAD] w-full h-screen">
-            <div class="bg-white w-300 h-full ml-85">
+        <div className="min-h-screen bg-[#4CBCAD] flex items-center justify-center p-4 sm:p-6">
+            <div className="w-full max-w-6xl bg-white rounded-lg shadow-xl flex flex-col min-h-[90vh] overflow-hidden">
                 <Navbar />
-                <div class="h-[81%]">
+                <main className="flex-grow p-6 sm:p-10">
                     <Outlet />
-                </div>
+                </main>
                 <Footer />
             </div>
-        </section>
+        </div>
     );
 }
 

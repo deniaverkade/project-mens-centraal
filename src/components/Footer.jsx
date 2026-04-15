@@ -2,17 +2,20 @@ import { Link } from 'react-router';
 
 const Footer = () => {
     return (
-        <footer class="bg-mist-900 text-cyan-600 h-18 static">
-            <div class="flex gap-13 ">
-                <div class="bg-emerald-300 w-15 h-15 absolute ml-5" />
-                <div class="bg-emerald-300 w-15 h-15 absolute ml-30" />
-                
-                 <p class="ml-60">Uw werk/foto op onze website? <Link to="youtube.com">Klik hier</Link></p>
-                 <p><Link to="youtube.com">Privacy/AVG</Link></p>
-                 <p><Link to="youtube.com">Doneren</Link></p>
-                
-                <Link to="facebook.com"><div class="bg-blue-800 w-15 h-15  " /></Link>
-                <Link to="pinterest.com"><div class="bg-red-700 w-15 h-15 " /></Link>
+        <footer className="bg-gray-800 text-white py-6 px-6 sm:px-10">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="text-sm text-gray-400">
+                    &copy; {new Date().getFullYear()} Stichting Mens Centraal
+                </div>
+                <div className="flex items-center gap-6">
+                    <span className="text-sm text-gray-400">Volg ons:</span>
+                    <Link to="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#4CBCAD] transition-colors" aria-label="Facebook">
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </Link>
+                    <Link to="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#4CBCAD] transition-colors" aria-label="Pinterest">
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                    </Link>
+                </div>
             </div>
         </footer>
     );
