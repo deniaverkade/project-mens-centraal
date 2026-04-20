@@ -4,3 +4,5 @@ const about = [
     {id: 3, content: "abc", name:"anbi"},
     {id: 4, content: "abc", name:"bestuur"}
 ]
+
+export default about;
