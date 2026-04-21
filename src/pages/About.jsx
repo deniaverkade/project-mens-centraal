@@ -22,29 +22,51 @@ const About = () => {
     const tabContent = {
         missie: {
             title: 'Onze Missie',
-            content: 'Stichting Mens Centraal streeft ernaar om ouderen te verbinden met hun gemeenschap. Wij geloven dat elke oudere het recht heeft op aandacht, zorg en betekenisvolle interactie. Door projecten te organiseren en samen te werken met lokale organisaties, creëren wij een netwerk van ondersteuning.',
+            content: 'Stichting Mens Centraal streeft ernaar om ouderen te verbinden met hun gemeenschap. Wij geloven dat elke oudere het recht heeft op aandacht, zorg en betekenisvolle interactie.',
         },
+        // This was missing!
         visie: {
             title: 'Visie & Doel',
-            content: 'Wij envision een samenleving waarin ouderen actief deelnemen en worden gewaardeerd voor hun ervaring en wijsheid. Ons doel is om bruggen te bouwen tussen generaties en om ouderen de kans te geven om hun talenten te blijven inzetten.',
+            content: 'Wij envision een samenleving waarin ouderen actief deelnemen en worden gewaardeerd voor hun ervaring en wijsheid. Ons doel is om bruggen te bouwen tussen generaties.',
         },
         anbi: {
-            title: 'ANBI Status',
-            content: 'Stichting Mens Centraal is erkend als Algemeen Nut Beogende Instelling (ANBI). Dit betekent dat wij voldoen aan de strenge eisen van de Belastingdienst en dat giften aan onze stichting fiscaal aftrekbaar zijn.',
+            title: 'ANBI Status & Transparantie',
+            content: (
+                <div className="space-y-4">
+                    <p>Wij voldoen aan de strenge eisen van de Belastingdienst. Onze gegevens:</p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-white p-4 rounded border border-gray-200 shadow-sm">
+                        <li><strong>RSIN:</strong> 852159632</li>
+                        <li><strong>KvK-nummer:</strong> 56599994</li>
+                        <li><strong>Status:</strong> Actief</li>
+                    </ul>
+                </div>
+            ),
         },
         bestuur: {
-            title: 'Bestuur',
-            content: 'Ons bestuur bestaat uit toegewijde vrijwilligers die zich inzetten voor de belangen van ouderen in onze regio. Zij zorgen voor transparant beheer en strategische koersbepaling.',
+            title: 'Ons Bestuur',
+            content: (
+                <div className="space-y-2">
+                    <p>Het bestuur van Stichting Mens Centraal bestaat uit:</p>
+                    <ul className="list-disc pl-5 space-y-1">
+                        <li><strong>Voorzitter:</strong> [Naam invullen]</li>
+                        <li><strong>Secretaris:</strong> [Naam invullen]</li>
+                        <li><strong>Penningmeester:</strong> [Naam invullen]</li>
+                    </ul>
+                </div>
+            ),
         },
     };
 
     return (
-        <section aria-label="Over Ons">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                {/* Main Content Area */}
+        <section aria-labelledby="about-heading" className="max-w-6xl mx-auto">
+            <h1 id="about-heading" className="text-3xl font-extrabold text-gray-900 mb-8 border-b-4 border-[#4CBCAD] inline-block pb-2">
+                Over Ons
+            </h1>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <div className="lg:col-span-3">
-                    {/* Tabs */}
-                    <div className="flex flex-wrap gap-2 mb-6" role="tablist" aria-label="Informatie categorieën">
+                    {/* Improved Tabs with better visual 'heft' */}
+                    <div className="flex border-b border-gray-200 mb-6 overflow-x-auto" role="tablist" aria-label="Informatie categorieën">
                         {tabs.map((tab) => (
                             <button
                                 key={tab.id}
@@ -53,54 +75,56 @@ const About = () => {
                                 aria-controls={`tabpanel-${tab.id}`}
                                 id={`tab-${tab.id}`}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                                className={`whitespace-nowrap px-6 py-3 font-bold transition-all border-b-4 ${
                                     activeTab === tab.id
-                                        ? 'bg-[#4CBCAD] text-white'
-                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                }`}
+                                        ? 'border-[#4CBCAD] text-[#388E83] bg-[#4CBCAD]/5'
+                                        : 'border-transparent text-gray-500 hover:text-[#4CBCAD] hover:bg-gray-50'
+                                } focus:outline-none focus:ring-2 focus:ring-[#4CBCAD] focus:ring-inset`}
                             >
                                 {tab.label}
                             </button>
                         ))}
                     </div>
 
-                    {/* Tab Content */}
+                    {/* Tab Content with better spacing */}
                     <div
                         role="tabpanel"
                         id={`tabpanel-${activeTab}`}
                         aria-labelledby={`tab-${activeTab}`}
-                        className="bg-gray-50 p-6 rounded-lg"
+                        className="bg-white border border-gray-100 shadow-xl p-8 rounded-xl min-h-[300px]"
                     >
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">{tabContent[activeTab].title}</h2>
-                        <p className="text-gray-600 leading-relaxed">{tabContent[activeTab].content}</p>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="mt-8 text-center">
-                        <p className="text-lg text-gray-700 mb-4">Geïnteresseerd in onze projecten?</p>
-                        <Link
-                            to="/projects"
-                            className="inline-block bg-[#4CBCAD] text-white px-6 py-3 rounded-md font-medium hover:bg-[#3da89a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#4CBCAD] focus:ring-offset-2"
-                        >
-                            Naar projecten
-                        </Link>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                            <span className="w-2 h-8 bg-[#4CBCAD] rounded-full"></span>
+                            {tabContent[activeTab].title}
+                        </h2>
+                        <div className="text-gray-700 leading-relaxed text-lg">
+                            {tabContent[activeTab].content}
+                        </div>
                     </div>
                 </div>
 
-                {/* Sidebar */}
-                <aside className="bg-[#ebb7d7]/30 p-6 rounded-lg" aria-label="Gerelateerde links">
-                    <h2 className="text-lg font-bold text-gray-800 mb-4">Meer informatie</h2>
-                    <nav aria-label="Over Ons submenu">
-                        <ul className="space-y-3">
-                            {sidebarLinks.map((link) => (
-                                <li key={link.label}>
-                                    <a href={link.href} className="text-gray-700 hover:text-[#4CBCAD] transition-colors">
-                                        {link.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                {/* Sidebar with "Premium" styling */}
+                <aside className="lg:col-span-1" aria-label="Documenten en downloads">
+                    <div className="bg-[#4CBCAD]/10 p-6 rounded-2xl border-l-4 border-[#4CBCAD]">
+                        <h2 className="text-xl font-bold text-gray-800 mb-6">Documenten</h2>
+                        <nav>
+                            <ul className="space-y-4">
+                                {sidebarLinks.map((link) => (
+                                    <li key={link.label}>
+                                        <a 
+                                            href={link.href} 
+                                            className="flex items-center group text-gray-700 font-medium hover:text-[#388E83]"
+                                        >
+                                            <span className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                            <span className="underline decoration-[#4CBCAD]/30 group-hover:decoration-[#4CBCAD]">
+                                                {link.label}
+                                            </span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </div>
                 </aside>
             </div>
         </section>
