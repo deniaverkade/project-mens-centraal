@@ -1,24 +1,19 @@
 import projects from "../projects.js";
 import ProjectCard from "../components/ProjectCard"
 import { useState } from "react";
-import ReactPaginate from 'react-paginate';
-import ReactDOM from 'react-dom';
+import ProjectPaginate from "../components/ProjectPaginate.jsx";
+
 
 
 const Projects = () => {
 
-    const [projectsData, setProjectsData]= useState(projects);
 
-    // 
+
+    
     return ( <section>
         <div class="bg-[#ecf1f1] w-200 h-[81%] ml-100 absolute">
             
-           <ProjectCard 
-           name={projectsData[0].name} 
-           img={projectsData[0].img} 
-           desc={projectsData[0].description} 
-           linkweb={projectsData[0].link}
-           />
+        <ProjectPaginate/>
 
         </div>
 
