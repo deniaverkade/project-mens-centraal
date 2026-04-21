@@ -22,6 +22,7 @@ const ProjectPaginate = () => {
                         img={item.img}
                         desc={item.description}
                         linkweb={item.link}
+                        key={item.id}
                     />
                 ))}
             </div>
