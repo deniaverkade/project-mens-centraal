@@ -1,6 +1,7 @@
 import projects from "../projects.js";
 import ProjectCard from "../components/ProjectCard"
 import { useState } from "react";
+import ReactPaginate from 'react-paginate';
 
 
 const Projects = () => {

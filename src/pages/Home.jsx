@@ -13,7 +13,7 @@ const Home = () => {
             </p>
         </div>
         <img src="../images/img1.png" class="w-full h-130 object-cover" />
-        <div class="flex  mt-15">
+        <div class="flex  mt-20">
             <div class="w-80 ml-15">
                 <h1 class="text-3xl"><b>Impact projecten</b></h1>
                 <p><b>+1500</b> ouderen per jaar bereikt</p>
