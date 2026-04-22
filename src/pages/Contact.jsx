@@ -70,8 +70,8 @@ const Contact = () => {
                                 </div>
                                 <div className="text-lg text-gray-800 space-y-1">
                                     <p className="font-black">Stichting Mens Centraal</p>
-                                    <p>Straatnaam 123</p>
-                                    <p>1234AB Stadnaam</p>
+                                    <p>Hovenier 45</p>
+                                    <p>3161 LG Rhoon</p>
                                 </div>
                             </div>
 
@@ -79,9 +79,9 @@ const Contact = () => {
                             <div className="bg-white p-8 border-2 border-dashed border-[#4CBCAD]/30 shadow-sm rounded-sm">
                                 <h2 className="text-2xl font-black text-gray-800 mb-4">Wilt u liever bellen?</h2>
                                 <div className="space-y-4">
-                                    <p className="text-lg text-gray-500 font-bold">Voornaam Achternaam</p>
+                                    <p className="text-lg text-gray-500 font-bold">Ingrid Hoogstraten</p>
                                     <p className="text-3xl font-black text-[#4CBCAD] tracking-tight">
-                                        +31 6 123456789
+                                        06-40 54 54 90
                                     </p>
                                     <p className="text-xs text-gray-400 font-bold">Bereikbaar op werkdagen 09:00 - 17:00</p>
                                 </div>
